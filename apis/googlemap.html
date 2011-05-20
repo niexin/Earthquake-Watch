@@ -105,7 +105,7 @@
 			map: map,
 			center: quakeList[quake].center,
 			//radius based on current zoom level and the magnitude of the quake
-			radius: (1000000/Math.pow(1.8,zoomLevel)) * Math.pow(1.5, quakeList[quake].magnitude)
+			radius: (600000/Math.pow(1.8,zoomLevel)) * Math.pow(1.5, quakeList[quake].magnitude)
 		};
 		circle = new google.maps.Circle(circleOptions);
 		//push circle into a circle array
