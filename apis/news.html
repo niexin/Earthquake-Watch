@@ -1,9 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-		<style type="text/css">
-			.gsc-control{width:100% !important}
-		</style>
+    <style type="text/css">
+      .gsc-control{
+        width:100% !important;
+        font-family:Arial,Helvetica,sans-serif !important;
+        font-size: 0.9em !important;
+	}
+        table.gsc-search-box {
+          display: none;
+        }
+        .gsc-result {
+          border-bottom: 1px solid #303030;
+            margin-bottom: 8px !important;
+        }
+	.gs-result .gs-snippet {
+          margin-bottom: 8px;
+        }
+        .gsc-resultsHeader {
+          border-bottom: 1px solid #303030 !important;
+          margin-bottom: 8px !important;
+        }
+    </style>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Earthquake News Search</title>
     <script src="http://www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
@@ -37,7 +55,11 @@
     </script>
   </head>
   <body style="font-family: Arial;border: 0 none;">
-    <div id="content">Loading...</div>
+    {% if isCookieSet %}
+      <b>News around {{region}}. </b><br/>
+      <div id="content">Loading...</div>
+    {% else %}
+      <b> Please select an earthquake... </b>
+    {% endif %}
   </body>
 </html>
-​
